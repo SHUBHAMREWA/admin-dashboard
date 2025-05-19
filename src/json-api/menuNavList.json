@@ -1,0 +1,92 @@
+
+[
+    {
+        "category"   : "DASHBOARD" ,
+        "menus"       :  [
+                        {
+                            "label"  : "Modern" ,
+                             "icon"  : "airplay" ,
+                             "link"  : "dashboard/modern" 
+                        } , 
+                        {
+                            "label"  : "Analytics",
+                            "icon"   : "analytics",
+                            "link"   : "dashboard/analytics" 
+                        }, 
+                         {
+                            "label": "Inventory",
+                            "icon": "inventory",
+                            "link": "dashboard/inventory"
+                        }
+                         ]
+    }  
+
+    ,
+
+    {
+        "category"  : "Apps"  ,
+        "menus": [
+                        {
+                            "label": "Customer",
+                            "icon": "group",
+                            "isDropdown": true,
+                            "dropdownMenu": [
+                            {
+                                "label": "list",
+                                "icon": "list",
+                                "link": "customer-list"
+                            },
+                            {
+                                "label": "add New",
+                                "icon": "add",
+                                "link": "customer-add"
+                            },
+                            {
+                                "label": "Edit",
+                                "icon": "edit",
+                                "link": "customer-edit"
+                            }
+                            ]
+                        },
+
+                        {
+                            "label": "Calender",
+                            "icon": "schedule",
+                            "link": "calender"
+                        },
+                        {
+                            "label": "Index",
+                            "icon": "inbox",
+                            "link": "inbox"
+                        },
+                        {
+                            "label": "Notes",
+                            "icon": "note",
+                            "link": "notes"
+                        },
+                        {
+                            "label": "mail",
+                            "icon": "mail",
+                            "link": "notifications"
+                        }
+                        ]
+    }
+
+    ,
+    {
+        "category" : "AUTHENTICATIONS" ,
+        "menus"    : [
+                      {
+                         "label"  : "Reset Password" ,
+                         "icon"    :  "password"  ,
+                         "link"    : "reset-password" 
+                      } ,
+                      {
+                         "label"  :  "LogOut" ,
+                         "icon"   :  "logout"  ,
+                         "link"   :  "logout"
+                      }
+                     ]
+    }
+   
+]
