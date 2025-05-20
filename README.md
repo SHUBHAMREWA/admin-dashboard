@@ -27,3 +27,11 @@ DAY -  1
     
 
 -->  Menu List have one DropDown menu i Created this Menu using < Collapse> component 
+
+
+
+### DAY -   2
+
+-->> Today we Create a App Bar section this section show in Top of the Admin-panel and this is a 
+     (template file for admin-panel)
+-->> using a Appbar Componet fromm Material Ui
