@@ -34,4 +34,16 @@ DAY -  1
 
 -->> Today we Create a App Bar section this section show in Top of the Admin-panel and this is a 
      (template file for admin-panel)
--->> using a Appbar Componet fromm Material Ui
+-->> using a Appbar Componet from Material Ui
+
+
+### DAY  -  3 
+
+-->  Making Admin Panel Responsive At mobile & Desktop , Using "react-responsive" library , 
+
+--> Applying Dark Mode Enable and Disable Feacture using "REACT-REDUX" library for global State Manage  ,
+
+--> creating Storage constant for createStore  and send this using Proviver Componenet and where we need to dispatch Action we 
+   use (useDispatch) and for get state we using (useSelector)  function   
+
+#### -->  here our admin-panels < navBar & App bar > (DARK MODE)  almost done We need to use Signup & ,Login feacture to access this Admin panel 
