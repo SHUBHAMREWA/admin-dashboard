@@ -11,8 +11,10 @@ import { BrowserRouter as Router ,
 import { createTheme , Paper, ThemeProvider } from '@mui/material';
  import { lightBlue } from '@mui/material/colors';
  import storage from './Storage';
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import { Provider } from 'react-redux';
+import Signup from './Component/Signup/signup';
+import Login from './Component/Login/Login';
 
 
 
@@ -24,6 +26,11 @@ const App =()=>{
                 const applyDarkmode =  storage.getState();
                 applyDarkmode.darkmode ? setMode("dark") : setMode("light")
        })
+
+       useEffect(()=>{
+            const applyDarkmode =  storage.getState();
+                applyDarkmode.darkmode ? setMode("dark") : setMode("light")
+       },[])
 
 
      const theme =  createTheme({
@@ -46,10 +53,12 @@ const App =()=>{
         <Provider store={storage}> 
 
               <ThemeProvider theme={theme}>
-                     <Paper>
+                     <Paper elevation={0}>
                             <Router>
                                    <Routes>
                                           <Route path="/" element={<Admin/>} />
+                                          <Route path="/signup" element={<Signup/>}/>
+                                          <Route path="/login" element={<Login/>}/>
                                    </Routes>
                             </Router>
                             </Paper>

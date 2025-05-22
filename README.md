@@ -47,3 +47,16 @@ DAY -  1
    use (useDispatch) and for get state we using (useSelector)  function   
 
 #### -->  here our admin-panels < navBar & App bar > (DARK MODE)  almost done We need to use Signup & ,Login feacture to access this Admin panel 
+
+
+
+### DAY  -  4 
+
+--> Create a Singup form page and add Path for this in Rotes  
+
+--> Using (custom Form Validation ) we can also use another library to validate this like ( YUP library ) 
+
+--> here i'm usinga ka < Grid > layOut Utility and also make this Page Responsive 
+
+
+##### "Now, we will get the HTTP request to sign up user details information tomorrow ."

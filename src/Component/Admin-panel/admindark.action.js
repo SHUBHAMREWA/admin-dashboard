@@ -1,5 +1,5 @@
 const  model = {
-         darkmode : false
+         darkmode : false 
 }
 
 const applyDarkmode = ( state=model , action)=>{
