@@ -23,12 +23,12 @@ const App =()=>{
        const [mode ,setMode] = useState("light")
 
        storage.subscribe(()=>{
-                const applyDarkmode =  storage.getState();
+                const applyDarkmode =  storage.getState().applyDarkMode;
                 applyDarkmode.darkmode ? setMode("dark") : setMode("light")
        })
 
        useEffect(()=>{
-            const applyDarkmode =  storage.getState();
+            const applyDarkmode =  storage.getState().applyDarkMode;
                 applyDarkmode.darkmode ? setMode("dark") : setMode("light")
        },[])
 

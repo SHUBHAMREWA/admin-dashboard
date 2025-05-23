@@ -23,8 +23,7 @@ import { useSelector, useDispatch } from "react-redux";
 const Admin = () => {
     
    const dispatch = useDispatch() ;
-   const response = useSelector(res=>res);
-   console.log(response)
+   const applyDarkMode = useSelector(res=>res.applyDarkMode);
 
 
   const [showDropdown, setShowDropdown] = useState(false);
@@ -112,8 +111,8 @@ const Admin = () => {
           subheader={width >= 250 ?
             <ListSubheader 
             sx={{
-               bgcolor : response.darkmode ? "#1a1919"  : "light",
-               color   : response.darkmode ? "white" : "black"
+               bgcolor : applyDarkMode.darkmode ? "#1a1919"  : "light",
+               color   : applyDarkMode.darkmode ? "white" : "black"
             }}
             >{data.category}</ListSubheader>
             :
@@ -146,7 +145,7 @@ const Admin = () => {
               width: width + "px",
               bgcolor: "#fff",
               transition: "0.3s",
-              bgcolor: response.darkmode ? "black" : "white" ,
+              bgcolor: applyDarkMode.darkmode ? "black" : "white" ,
               overflowX : "hidden"
             },
             transition : "0.3s"
@@ -203,7 +202,7 @@ const Admin = () => {
               width: width + "px",
               bgcolor: "#fff",
               transition: "0.3s",
-              bgcolor:  response.darkmode ? "black" : "white"
+              bgcolor:  applyDarkMode.darkmode ? "black" : "white"
             }
           }}
         >
@@ -339,7 +338,7 @@ const changeMode =(e)=>{
             xs: "100%",
 
           },
-          bgcolor: response.darkmode ? "#404040" : "#fff",
+          bgcolor: applyDarkMode.darkmode ? "#404040" : "#fff",
           transition: "0.4s"
         }}
       >

@@ -1,7 +1,7 @@
 ##  Making Admin DashBoard Project ---  Using REACT.JS , Material UI , React-Routing , REST API,  AXIOS,  React-BootStrap , APEX , REDUX , SweetAlert ,
 
 
-DAY -  1 
+### DAY -  1 
  -->>  creating React Project using npx create-vite@latest
  -->>  downloading Material UI  -- for styleling And Page LayOuting 
  -->> downLoaing React-router-dom   =  For Routing 
@@ -60,3 +60,25 @@ DAY -  1
 
 
 ##### "Now, we will get the HTTP request to sign up user details information tomorrow ."
+
+
+
+### DAY - 5
+
+--> Today we completed the Sign Up or Registration Process, and we used the (AXIOS) library for HTTP requests.
+
+--> Here, I used (react-bootstrap-sweetalert) for alert messages.
+
+--> When the user is already signed up, we show an alert message. Also, after a successful sign-up, we notify them.
+
+--> Used the REDUX library for global state management.
+
+--> Used (combineReducers({})) to wrap all reducers inside (createStore()).
+
+--> Received reducers using destructuring inside the useSelector(res => res) function.
+
+--> We used some libraries for REDUX state monitoring and dispatching actions — like (Logger, Thunk).
+
+--> For AXIOS requests, we created a base URL.
+
+--> After successful registration or sign-up, we received a (TOKEN). This token helps in accessing the Admin Panel. 
