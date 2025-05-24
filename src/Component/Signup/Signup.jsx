@@ -25,6 +25,10 @@ const Signup = () => {
     useEffect(() => {
 
         if (signupReducer.success) {
+ 
+      document.cookie = `authToken=${signupReducer.data.token}; expires=${new Date(Date.now() + 86400 * 1000).toUTCString()}; path=/`;
+
+
             setSweetalert({
                 title: signupReducer.data.message,
                 show: true,
@@ -397,11 +401,9 @@ const Signup = () => {
 
                     }}  >
 
-                    <Stack
-                    >
+                    <Stack>
 
-                        <Typography variant="h4" fontWeight="bold" component={"p"}
-                        >
+                        <Typography variant="h4" fontWeight="bold" component={"p"}>
                             Register
                         </Typography>
 

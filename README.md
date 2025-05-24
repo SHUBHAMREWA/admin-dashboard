@@ -1,4 +1,4 @@
-##  Making Admin DashBoard Project ---  Using REACT.JS , Material UI , React-Routing , REST API,  AXIOS,  React-BootStrap , APEX , REDUX , SweetAlert ,
+##  Making Admin DashBoard Project ---  Using REACT.JS , Material UI , React-Routing , REST API,  AXIOS,  React-BootStrap , APEX , REDUX , SweetAlert  , YUP,  universal-Cookie
 
 
 ### DAY -  1 
@@ -82,3 +82,20 @@
 --> For AXIOS requests, we created a base URL.
 
 --> After successful registration or sign-up, we received a (TOKEN). This token helps in accessing the Admin Panel. 
+
+
+### DAY  - 6  
+
+--> Today we are creating a Login Page
+
+--> Here I use (Yup) library for form validation
+
+--> In this we also do an Axios or HTTP request to get token (this token helps us to login or access admin panel)
+
+--> I used React-Redux for global state handling and for setting information we use a cookie
+
+--> Universal Cookie is best library for saving information in cookie
+
+--> Save Infomation of User When click On remember me .
+
+#####  Next day we will be creating a Guard Component and this will become a security component of our Admin Panel 

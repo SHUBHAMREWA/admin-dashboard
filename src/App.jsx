@@ -9,7 +9,7 @@ import { BrowserRouter as Router ,
 
  import Admin from "./Component/Admin-panel/Admin";
 import { createTheme , Paper, ThemeProvider } from '@mui/material';
- import { lightBlue } from '@mui/material/colors';
+ import { lightBlue ,teal } from '@mui/material/colors';
  import storage from './Storage';
 import { useEffect, useState } from 'react';
 import { Provider } from 'react-redux';
@@ -23,30 +23,32 @@ const App =()=>{
        const [mode ,setMode] = useState("light")
 
        storage.subscribe(()=>{
-                const applyDarkmode =  storage.getState().applyDarkMode;
+                const applyDarkmode =  storage.getState().applyDarkMode ;
                 applyDarkmode.darkmode ? setMode("dark") : setMode("light")
        })
 
+
        useEffect(()=>{
-            const applyDarkmode =  storage.getState().applyDarkMode;
+            const applyDarkmode =  storage.getState().applyDarkMode ;
                 applyDarkmode.darkmode ? setMode("dark") : setMode("light")
        },[])
+
 
 
      const theme =  createTheme({
                            palette : {
                               primary  : lightBlue ,
+                               secondary : teal  ,
                                 mode :  mode
 
                            }  ,
                            typography : {
                                fontFamily : "Poppins"
                            }  ,
-                         
-
                       })
 
 
+                      
   const design = (
              
        <>
@@ -56,8 +58,9 @@ const App =()=>{
                      <Paper elevation={0}>
                             <Router>
                                    <Routes>
-                                          <Route path="/" element={<Admin/>} />
+                                          <Route path="/" element={<Signup/>} />
                                           <Route path="/signup" element={<Signup/>}/>
+                                          <Route path="admin-panel" element={<Admin/>}/>
                                           <Route path="/login" element={<Login/>}/>
                                    </Routes>
                             </Router>
