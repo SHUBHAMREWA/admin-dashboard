@@ -1,7 +1,6 @@
 
 import {  LOGIN_REQUEST ,
       LOGIN_SUCCESS ,
-      LOGIN_ERROR ,
       USER_NOT_FOUND ,
       INCORRECT_PASSWORD
       } from "./login.state";

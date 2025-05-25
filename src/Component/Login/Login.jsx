@@ -263,6 +263,7 @@ const Login = () => {
 
                                 <div>
                                     <Button 
+                                    loading = {loginReducer.isLoading}
                                     disabled = {disableLogin}
                                     variant="contained" color="secondary" type="submit">
                                         Login

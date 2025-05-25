@@ -1,4 +1,4 @@
-##  Making Admin DashBoard Project ---  Using REACT.JS , Material UI , React-Routing , REST API,  AXIOS,  React-BootStrap , APEX , REDUX , SweetAlert  , YUP,  universal-Cookie
+##  Making Admin DashBoard Project ---  Using REACT.JS , Material UI , React-Routing , REST API,  AXIOS,  React-BootStrap , APEX , REDUX , SweetAlert  , YUP,  universal-Cookie  , react-useAsync  ,
 
 
 ### DAY -  1 
@@ -99,3 +99,17 @@
 --> Save Infomation of User When click On remember me .
 
 #####  Next day we will be creating a Guard Component and this will become a security component of our Admin Panel 
+
+
+### DAY  -  7
+
+--> Today i create a AuthGuard Component for safely Access the Admin panel 
+
+--> using axios request to verify the Token 
+
+--> using  < Outlet> componet for show Child Route 
+
+--> Afeter verifaction we get in response a user Details this user We will use in Admin Panel 
+
+
+#### Next day we will be work on Admin panel Again and we try to create a Dashboard  Componet  

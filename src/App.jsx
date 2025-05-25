@@ -15,7 +15,7 @@ import { useEffect, useState } from 'react';
 import { Provider } from 'react-redux';
 import Signup from './Component/Signup/signup';
 import Login from './Component/Login/Login';
-
+import AuthGuard from './Guard/AuthGuard';
 
 
 const App =()=>{
@@ -60,7 +60,9 @@ const App =()=>{
                                    <Routes>
                                           <Route path="/" element={<Signup/>} />
                                           <Route path="/signup" element={<Signup/>}/>
-                                          <Route path="admin-panel" element={<Admin/>}/>
+                                             <Route element={<AuthGuard/>}>
+                                                 <Route path="admin-panel" element={<Admin/>}/>
+                                            </Route>
                                           <Route path="/login" element={<Login/>}/>
                                    </Routes>
                             </Router>
