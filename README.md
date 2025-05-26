@@ -113,3 +113,19 @@
 
 
 #### Next day we will be work on Admin panel Again and we try to create a Dashboard  Componet  
+
+
+### DAY   -  8
+
+--> Today work on Menu component. This Menu component shows after clicking on the Profile Icon.
+
+--> In this Menu I used userDetails which are fetched after token verification and this is shown on the Profile Menu.
+
+--> Here we worked on (Logout) using REDUX state management and this is done using Axios request.
+
+--> Both Login and Logout are using Axios request:
+      - Login method - POST
+      - Logout method - GET
+
+
+--> also we using ka useResolve and useMatch Component to when any route match we are highlight them

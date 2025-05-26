@@ -10,7 +10,7 @@ import { Link ,useNavigate } from "react-router-dom";
 import { useState ,useEffect } from "react";
 import * as yup from "yup"
 import { useSelector , useDispatch } from "react-redux";
-import loginFunction from "./login.action.js";
+import{ loginFunction }from "./login.action.js";
 import Cookies from "universal-cookie"  ;
 
 

@@ -1,60 +1,75 @@
+import {
+  LOGIN_REQUEST,
+  LOGIN_SUCCESS,
+  USER_NOT_FOUND,
+  INCORRECT_PASSWORD,
+  LOGOUT_SUCCESS,
+  LOGOUT_FAILED,
+} from "./login.state";
 
-import {  LOGIN_REQUEST ,
-      LOGIN_SUCCESS ,
-      USER_NOT_FOUND ,
-      INCORRECT_PASSWORD
-      } from "./login.state";
+import axios from "axios";
+import Cookies from "universal-cookie";
 
-import axios from "axios"  ;
+axios.defaults.baseURL = "http://localhost:3030";
 
+const loginFunction = (input) => {
+  console.log(input);
 
-axios.defaults.baseURL  = "http://localhost:3030"  ;
+  return async (setDispatch) => {
+    try {
+      setDispatch({
+        type: LOGIN_REQUEST,
+      });
 
-const loginFunction = (input)=>{
+      let response = await axios({
+        method: "post",
+        url: "/login",
+        data: input,
+      });
 
-    console.log(input)
+      setDispatch({
+        type: LOGIN_SUCCESS,
+        payLoad: response.data,
+      });
+    } catch (error) {
+      console.log(error);
+      if (error.status === 401) {
+        setDispatch({
+          type: INCORRECT_PASSWORD,
+        });
+      }
 
-    return async(setDispatch)=>{
- 
-        try{  
-               setDispatch({
-                 type : LOGIN_REQUEST , 
-               })
-                
-               let response = await axios( {
-                             method : "post" ,
-                             url   : "/login" ,
-                             data :  input
-               }) 
-
-               setDispatch({
-                  type : LOGIN_SUCCESS ,
-                  payLoad : response.data
-               })
-              
-
-        }
-        catch(error){
-            console.log(error)
-               if(error.status === 401){
-                     setDispatch({
-                         type : INCORRECT_PASSWORD 
-                     })
-               }
-            
-               if(error.status === 404){
-                    setDispatch({
-                        type : USER_NOT_FOUND
-                    })
-               }
-
-        }
-
-
+      if (error.status === 404) {
+        setDispatch({
+          type: USER_NOT_FOUND,
+        });
+      }
     }
+  };
+};
 
+const LogoutFunction = (id) => {
+  return async (setDispatch) => {
+    try {
+      const cookie = new Cookies();
 
-}
+      let response = await axios({
+        method: "get",
+        url: "/logout/" + id,
+      });
 
+      cookie.remove("authToken");
+      sessionStorage.removeItem("userDetails");
 
-export default loginFunction ;
+      setDispatch({
+        type: LOGOUT_SUCCESS,
+      });
+    } catch (error) {
+      setDispatch({
+        type: LOGOUT_FAILED,
+      });
+    }
+  };
+};
+
+export { loginFunction, LogoutFunction };

@@ -1,4 +1,4 @@
-
+import 'bootstrap/dist/css/bootstrap.min.css';
 import '@fontsource/poppins';
 import 'material-icons/iconfont/material-icons.css';
 import { BrowserRouter as Router , 
@@ -16,7 +16,7 @@ import { Provider } from 'react-redux';
 import Signup from './Component/Signup/signup';
 import Login from './Component/Login/Login';
 import AuthGuard from './Guard/AuthGuard';
-
+import Modern from './Component/Admin-panel/Modern/Modern';
 
 const App =()=>{
 
@@ -61,7 +61,11 @@ const App =()=>{
                                           <Route path="/" element={<Signup/>} />
                                           <Route path="/signup" element={<Signup/>}/>
                                              <Route element={<AuthGuard/>}>
-                                                 <Route path="admin-panel" element={<Admin/>}/>
+                                                      <Route  path="/admin-panel" element={<Admin/>}>
+
+                                                          <Route path="dashboard/modern"  element={<Modern/>}></Route>
+ 
+                                                      </Route>
                                             </Route>
                                           <Route path="/login" element={<Login/>}/>
                                    </Routes>

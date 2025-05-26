@@ -17,7 +17,7 @@ const checkUser  = async({Token , setResponse })=>{
                                   url  :  `/verify-token/`+Token
                                     })
 
-           console.log(response.data.data.data)
+          //  console.log(response.data.data.data)
            sessionStorage.setItem("userDetails" , JSON.stringify(response.data.data.data))    
 
            setResponse(response.data.data.data) 
