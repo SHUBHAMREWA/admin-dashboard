@@ -23,15 +23,19 @@ import {
 } from "@mui/material";
 import menuList from "../../json-api/menuNavList.json";
 import logo from "../../../public/bislerylogo.png";
-import { Link, Outlet, useNavigate, useResolvedPath ,  useMatch } from "react-router-dom";
+import { Link, Outlet, useNavigate, useResolvedPath ,  useMatch , useLocation } from "react-router-dom";
 import { useEffect, useState } from "react";
 import MediaQuery from "react-responsive";
 import { styled } from "@mui/material/styles";
 import { useSelector, useDispatch } from "react-redux";
 import { LogoutFunction } from "../Login/login.action";
-import profileImg from "../../../public/profilephoto.png"
+import profileImg from "../../../public/profilephoto.png" ;
 
 const Admin = () => {
+
+  const currentPath  =  useLocation() ;
+  const pathSplit    =  currentPath.pathname.split("/")
+
 
 
   const dispatch = useDispatch();
@@ -84,6 +88,14 @@ const Admin = () => {
   useEffect(() => {
     width == 85 ? setShowDropdown(false) : null;
   }, [width]);
+
+  useEffect(() => {
+    if (applyDarkMode.darkmode) {
+      document.body.classList.add('dark-mode');
+    } else {
+      document.body.classList.remove('dark-mode');
+    }
+  }, [applyDarkMode.darkmode]);
 
 
 
@@ -196,11 +208,11 @@ const Admin = () => {
             "& .MuiDrawer-paper": {
               width: width + "px",
               bgcolor: "#fff",
-              transition: "0.3s",
+              transition: "width 0.3s ease-in-out",
               bgcolor: applyDarkMode.darkmode ? "#121212" : "white",
               overflowX: "hidden",
             },
-            transition: "0.3s",
+            transition: "width 0.3s ease-in-out",
           }}
         >
           <List
@@ -258,7 +270,7 @@ const Admin = () => {
               width: width + "px",
               bgcolor: "#fff",
               transition: "0.3s",
-              bgcolor: applyDarkMode.darkmode ? "#0000007b" : "white",
+              bgcolor: applyDarkMode.darkmode ? "black" : "white",
             },
           }}
         >
@@ -375,11 +387,12 @@ const Admin = () => {
         position="fixed"
         sx={{
           width: {
-            md: `calc(100% - (${width + "px"}))`,
+            md: `calc(100% - ${width}px)`,
             xs: "100%",
           },
           bgcolor: applyDarkMode.darkmode ? "#404040" : "#fff",
-          transition: "0.4s",
+          transition: "width 0.3s ease-in-out",
+          ml: { md: `${width}px`, xs: 0 },
         }}
       >
         <Stack
@@ -607,7 +620,21 @@ const Admin = () => {
       }}
       >  
          
-         <Breadcrumbs>         </Breadcrumbs>
+         <Breadcrumbs 
+         sx={{mt : 3}}
+         > 
+               { 
+                pathSplit.map((el, index)=>{
+
+                      if(el != ""  && el != "admin-panel"){
+
+                        return <Link key={index}> {el} </Link>
+                              
+                        }
+               }) 
+
+               }
+            </Breadcrumbs>
 
                
                <Outlet/>

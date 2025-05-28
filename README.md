@@ -1,4 +1,4 @@
-##  Making Admin DashBoard Project ---  Using REACT.JS , Material UI , React-Routing , REST API,  AXIOS,  React-BootStrap , APEX , REDUX , SweetAlert  , YUP,  universal-Cookie  , react-useAsync  ,
+##  Making Admin DashBoard Project ---  Using REACT.JS , Material UI , React-Routing , REST API,  AXIOS,  React-BootStrap , APEX Chart, REDUX , SweetAlert  , YUP,  universal-Cookie  , react-useAsync  ,
 
 
 ### DAY -  1 
@@ -128,4 +128,13 @@
       - Logout method - GET
 
 
---> also we using ka useResolve and useMatch Component to when any route match we are highlight them
+--> also we using ka useResolve and useMatch Component to when any route match we are highlight them 
+
+
+### DAY   -  9  
+
+-→ Creating a Modern Dashboard Panel and used ApexCharts library to show information.
+
+-→ Also used Redux for API data fetching.
+
+-→ Applying Dark Mode and some CSS for animations.
