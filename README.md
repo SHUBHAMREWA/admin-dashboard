@@ -138,3 +138,13 @@
 -→ Also used Redux for API data fetching.
 
 -→ Applying Dark Mode and some CSS for animations.
+
+
+### DAY - 10 
+
+--> Forgot Component Create for forgot password 
+
+-->  Forgot password option  using REDUX 
+
+--> Using API for reset password and Update Password 
+

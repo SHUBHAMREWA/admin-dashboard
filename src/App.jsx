@@ -8,15 +8,16 @@ import { BrowserRouter as Router ,
 
 
  import Admin from "./Component/Admin-panel/Admin";
-import { createTheme , Paper, ThemeProvider } from '@mui/material';
- import { lightBlue ,teal } from '@mui/material/colors';
- import storage from './Storage';
-import { useEffect, useState } from 'react';
-import { Provider } from 'react-redux';
-import Signup from './Component/Signup/signup';
-import Login from './Component/Login/Login';
-import AuthGuard from './Guard/AuthGuard';
-import Modern from './Component/Admin-panel/Modern/Modern';
+import { createTheme , Paper, ThemeProvider } from '@mui/material' ;
+ import { lightBlue ,teal } from '@mui/material/colors' ;
+ import storage from './Storage' ;
+import { useEffect, useState } from 'react' ;
+import { Provider } from 'react-redux' ;
+import Signup from './Component/Signup/signup' ;
+import Login from './Component/Login/Login' ;
+import AuthGuard from './Guard/AuthGuard' ;
+import Modern from './Component/Admin-panel/Modern/Modern' ;
+import Forgot from './Component/Forgot/Forgot' ;
 
 const App =()=>{
 
@@ -68,6 +69,7 @@ const App =()=>{
                                                       </Route>
                                             </Route>
                                           <Route path="/login" element={<Login/>}/>
+                                          <Route path='/forgot' element={<Forgot/>}/>
                                    </Routes>
                             </Router>
                             </Paper>

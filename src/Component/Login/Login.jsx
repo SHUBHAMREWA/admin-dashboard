@@ -51,7 +51,7 @@ const Login = () => {
 
      if(loginReducer.success){               
         cookie.set("authToken" , loginReducer.data.token , {maxAge: 86400})  ;    
-        navigate("/admin-panel")   
+        navigate("/admin-panel/dashboard/modern")   
      }  
 
      if(loginReducer.usernotfound){
@@ -280,7 +280,10 @@ const Login = () => {
                                 <Button LinkComponent={Link}
                                     to="/signup"
                                     variant="outlined">Create New Account</Button>
-                                <Button variant="outlined" color="warning">Forgot Password</Button>
+                                <Button 
+                                LinkComponent={Link} 
+                                to ="/forgot"
+                                 variant="outlined" color="warning">Forgot Password</Button>
                             </Stack>
 
                         </Stack>
