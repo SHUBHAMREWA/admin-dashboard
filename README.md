@@ -148,3 +148,16 @@
 
 --> Using API for reset password and Update Password 
 
+### DAY  - 11 
+
+--> Adding Notes feature in 
+
+--> using Jodit editor to make notes , 
+
+--> localStorage for store the notes data , and we can create , read , and Delete the notes or Task ,
+
+
+### DAY  - 12 
+
+--> Making a calender and using a fullcalendar library for make calendars 
+

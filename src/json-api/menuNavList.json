@@ -34,17 +34,17 @@
                             {
                                 "label": "list",
                                 "icon": "list",
-                                "link": "customer-list"
+                                "link": "apps/customer-list"
                             },
                             {
                                 "label": "add New",
                                 "icon": "add",
-                                "link": "customer-add"
+                                "link": "apps/customer-add"
                             },
                             {
                                 "label": "Edit",
                                 "icon": "edit",
-                                "link": "customer-edit"
+                                "link": "apps/customer-edit"
                             }
                             ]
                         },
@@ -52,22 +52,22 @@
                         {
                             "label": "Calender",
                             "icon": "schedule",
-                            "link": "calender"
+                            "link": "apps/calender"
                         },
                         {
                             "label": "Index",
                             "icon": "inbox",
-                            "link": "inbox"
+                            "link": "apps/inbox"
                         },
                         {
                             "label": "Notes",
                             "icon": "note",
-                            "link": "notes"
+                            "link": "apps/notes"
                         },
                         {
                             "label": "mail",
                             "icon": "mail",
-                            "link": "notifications"
+                            "link": "apps/notifications"
                         }
                         ]
     }

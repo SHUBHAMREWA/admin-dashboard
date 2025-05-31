@@ -14,9 +14,6 @@ const Revenue  = ()=>{
     const revenueReducer = useSelector(res=>res.revenueReducer) ; 
     const applyDarkMode  = useSelector(res=>res.applyDarkMode)
 
-    console.log( revenueReducer.data && revenueReducer.data.months)
-
-
     const [series , setSeries]  = useState( 
 
         [

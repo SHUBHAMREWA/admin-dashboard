@@ -253,6 +253,7 @@ const Login = () => {
                             <Stack
                                 direction="row"
                                 justifyContent="space-between"
+                                alignItems="center"
                             >
                                 <FormControlLabel
                                   control={<Checkbox
@@ -276,6 +277,7 @@ const Login = () => {
                             <Stack
                                 direction="row"
                                 justifyContent="space-between"
+                                alignItems="center"
                             >
                                 <Button LinkComponent={Link}
                                     to="/signup"

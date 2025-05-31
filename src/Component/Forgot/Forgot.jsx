@@ -6,6 +6,7 @@ import { useEffect, useState } from "react";
 import { forgotRequest , updateRequest } from "./forgot.action";
 import { useNavigate } from "react-router-dom";
 
+
 const Forgot =()=>{
 
     const navigate = useNavigate()

@@ -52,10 +52,11 @@ const LogoutFunction = (id) => {
   return async (setDispatch) => {
     try {
       const cookie = new Cookies();
-
+      const user =  JSON.parse(sessionStorage.getItem("userDetails")) ;
+      const ID = user.userId
       let response = await axios({
         method: "get",
-        url: "/logout/" + id,
+        url: "/logout/" + ID,
       });
 
       cookie.remove("authToken");
