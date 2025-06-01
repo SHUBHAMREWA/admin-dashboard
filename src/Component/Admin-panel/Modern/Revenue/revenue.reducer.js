@@ -23,21 +23,19 @@ const revenueReducer = (state=model , action)=>{
             } 
             case REVENUE_SUCCESS : return {
                    ...state ,
-                     isLoading  : true  ,
+                     isLoading  : false  ,
                     data  :  action.payLoad , 
                     error : false , 
                     success : true
             }
             case REVENUE_FAILED : return {
                         ...state ,
-                     isLoading  : true  ,
+                     isLoading  : false  ,
                     data  :  null , 
                     error : true , 
                     success : false 
             }
             default : return state
-
-
 
         }
 

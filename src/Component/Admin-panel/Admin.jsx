@@ -37,6 +37,13 @@ const Admin = () => {
   const pathSplit    =  currentPath.pathname.split("/")
 
 
+useEffect(()=>{
+
+const prefersDarkMode = window.matchMedia('(prefers-color-scheme: dark)').matches; 
+prefersDarkMode ? setCheck(true) : setCheck(false)
+
+}, [])
+
 
   const dispatch = useDispatch();
   const applyDarkMode = useSelector((res) => res.applyDarkMode);
@@ -45,18 +52,20 @@ const Admin = () => {
   
   const navigate = useNavigate();
 
-  const [showDropdown, setShowDropdown] = useState(false);
-  const [width, setWidth] = useState("85");
-  const [showDrawer, setShowDrawer] = useState(false);
-  const [showMode, setShowMode] = useState("Light");
-  const [menuParent, setMenuParent] = useState(null);
+  const [showDropdown, setShowDropdown] = useState(false) ;
+  const [width, setWidth] = useState("85") ;
+  const [showDrawer, setShowDrawer] = useState(false) ;
+  const [showMode, setShowMode ] = useState("Light") ;
+  const [check ,setCheck]        = useState(false) ;
+  const [menuParent, setMenuParent] = useState(null) ;
   const menuState = Boolean(menuParent);
   const [usersDetails, setUserDetails] = useState({
                                                   email: "",
                                                   mobile: "",
                                                   name: "",
                                                   userId: "",
-                                                });
+                                                }) ;
+
 
 
   const checkLogOut = () => {
@@ -363,11 +372,16 @@ const Admin = () => {
       ? (setShowMode("Dark"),
         dispatch({
           type: "dark",
-        }))
+        }) ,
+        setCheck(true)
+
+      )
       : (setShowMode("Light"),
         dispatch({
           type: "light",
-        }));
+        }) ,
+        setCheck(false)
+       );
   };
 
   // Main Admin DESIGN
@@ -443,7 +457,7 @@ const Admin = () => {
             <Stack direction="row" alignItems="center">
               <FormGroup>
                 <FormControlLabel
-                  control={<Switch onChange={changeMode} />}
+                  control={<Switch onChange={changeMode} checked={check}  />}
                   label={showMode}
                 />
               </FormGroup>

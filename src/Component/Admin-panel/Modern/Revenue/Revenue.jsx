@@ -1,4 +1,4 @@
-import { Grid , Card , CardContent } from "@mui/material";
+import { Grid , Card , CardContent, Skeleton } from "@mui/material";
 import { useEffect ,useState } from "react";
 import Chart from "react-apexcharts"  ;
 import { useSelector ,useDispatch } from "react-redux";
@@ -12,7 +12,9 @@ const Revenue  = ()=>{
      const dispatch = useDispatch() ;
     //  console
     const revenueReducer = useSelector(res=>res.revenueReducer) ; 
-    const applyDarkMode  = useSelector(res=>res.applyDarkMode)
+    const applyDarkMode  = useSelector(res=>res.applyDarkMode)  ; 
+
+
 
     const [series , setSeries]  = useState( 
 
@@ -150,6 +152,36 @@ const Revenue  = ()=>{
 
             <Card>
 
+              {   
+                revenueReducer && revenueReducer.isLoading 
+                ?
+
+                    <div
+                    style={{
+                     height : "320px"
+                    }}
+                    >
+
+                      <div className="d-flex justify-content-end  p-2 ">
+                        <Skeleton width={30} height={30} animation="pulse" variant="rectangular"/>
+                        </div><br /><br />
+
+                        <div className="d-flex justify-content-center  p-2 ">
+                        <Skeleton width={"90%"} height={3} animation="wave" variant="text" />
+                        </div>
+                        <br /><br />
+                        <div className="d-flex justify-content-center  p-2 ">
+                        <Skeleton width={"90%"} height={3} animation="wave" variant="text" />
+                        </div>
+                        <br /><br />
+                        <div className="d-flex justify-content-center  p-2 ">
+                        <Skeleton width={"90%"} height={3} animation="wave" variant="text" />
+                        </div>
+                        <br /><br />
+                    </div>
+
+
+                 :
                 <CardContent>
 
                       <Chart 
@@ -158,7 +190,8 @@ const Revenue  = ()=>{
                       series={series}
                       />
 
-                </CardContent>
+                </CardContent>  
+                }
 
             </Card>
 

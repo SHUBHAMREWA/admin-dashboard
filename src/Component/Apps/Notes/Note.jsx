@@ -12,9 +12,13 @@ import { Grid  ,Stack  ,Button ,
 import JoditEditor from 'jodit-react' ;
 import { useEffect, useState } from "react";
 // import { setLocale } from "yup";
+import { useSelector } from "react-redux";
+import "./note.css"
 
 
 const Notes = ()=>{
+
+  const applyDarkMode = useSelector(res=>res.applyDarkMode)
 
     const [notes , setNotes]  = useState("") ;
     const [filename , setfilename]  = useState('') ; 
@@ -255,15 +259,15 @@ const ShowAllData = ({data})=>{
         <Grid 
         size={{xs : 12 , md : 9}}
         >
-              
-              <JoditEditor 
-              config={{
-                    height : "850px" ,
-                      }}
-              value={notes}
-              onBlur={(newContent)=>setNotes(newContent)}
-              /> 
-
+            <div className={applyDarkMode.darkmode ? 'editor-wrapper dark' : 'editor-wrapper'}>
+                  <JoditEditor 
+                  config={{
+                        height : "850px" ,
+                           }}
+                  value={notes}
+                  onBlur={(newContent)=>setNotes(newContent)}
+                  /> 
+           </div>
         </Grid>
 
 

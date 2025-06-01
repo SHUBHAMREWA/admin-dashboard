@@ -1,4 +1,4 @@
-##  Making Admin DashBoard Project ---  Using REACT.JS , Material UI , React-Routing , REST API,  AXIOS,  React-BootStrap , APEX Chart, REDUX , SweetAlert  , YUP,  universal-Cookie  , react-useAsync  ,
+##  Making Admin DashBoard Project ---  Using REACT.JS , Material UI , React-Routing , REST API,  AXIOS,  React-BootStrap , APEX Chart, REDUX , SweetAlert  , YUP,  Lazy-Loading , universal-Cookie  , react-useAsync  ,
 
 
 ### DAY -  1 
@@ -161,3 +161,11 @@
 
 --> Making a calender and using a fullcalendar library for make calendars 
 
+### DAY  - 13 
+
+--> Create a Skeleton page of SPA content  
+
+--> Using Lazy Loading for Faster Web  Loading  ;
+
+
+### OUR project is completed thank You: 🙏

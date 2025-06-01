@@ -29,12 +29,18 @@ const revenueFunction = ()=>{
 
                 // console.log(response.data)
 
+                  
+                setTimeout(()=>{
 
-          
-                setDispatch({
+                           setDispatch({
                   type  : REVENUE_SUCCESS ,
                   payLoad :  response.data
                  })
+
+
+                } , 1000)
+          
+         
  
 
             }

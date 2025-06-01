@@ -1,0 +1,30 @@
+/* Dark mode wrapper */
+.editor-wrapper.dark .jodit-container {
+  background-color: #1e1e1e;
+  color: #ffffff;
+  border: 1px solid #444;
+}
+
+/* Editor area */
+.editor-wrapper.dark .jodit-wysiwyg {
+  background-color: #1e1e1e;
+  color: #ffffff;
+}
+
+/* Toolbar */
+.editor-wrapper.dark .jodit-toolbar__box {
+  background-color: #2a2a2a;
+  border-bottom: 1px solid #444;
+}
+
+/* Status bar */
+.editor-wrapper.dark .jodit-status-bar {
+  background-color: #2a2a2a;
+  border-top: 1px solid #444;
+}
+
+/* Text inside editor */
+.editor-wrapper.dark .jodit-wysiwyg p,
+.editor-wrapper.dark .jodit-wysiwyg span {
+  color: #ffffff !important;
+}
