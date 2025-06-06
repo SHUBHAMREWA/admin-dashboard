@@ -1,5 +1,3 @@
-
-
 import { 
     FORGOT_REQUEST , 
     REQUEST_SUCCESS ,
@@ -12,7 +10,7 @@ import {
 
  import axios from "axios"  ;
 
- axios.defaults.baseURL = "http://localhost:3030"
+ axios.defaults.baseURL = "https://admin-d-api-1.onrender.com"
 
 const forgotRequest = (email)=>{
 

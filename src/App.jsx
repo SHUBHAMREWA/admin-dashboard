@@ -67,7 +67,7 @@ const App = () => {
 
               const prefersDarkMode = window.matchMedia('(prefers-color-scheme: dark)').matches; 
 
-              console.log(prefersDarkMode)
+              // console.log(prefersDarkMode)
            if(prefersDarkMode){
               console.log("state is changed")
              storage.dispatch({

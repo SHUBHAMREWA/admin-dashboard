@@ -1,4 +1,3 @@
-
 import { Outlet } from "react-router-dom";
 import Cookies from "universal-cookie"   ;
 import { useAsync } from "react-async";
@@ -6,7 +5,7 @@ import axios from "axios"
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 
-axios.defaults.baseURL  = "http://localhost:3030"
+axios.defaults.baseURL  = "https://admin-d-api-1.onrender.com"
 
 
 const checkUser  = async({Token , setResponse })=>{
