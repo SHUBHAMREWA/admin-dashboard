@@ -49,10 +49,14 @@ const Login = () => {
 
  const checkForLogin = ()=>{   
 
-     if(loginReducer.success){               
+     if(loginReducer.success){            
+          
+        // console.log("this is token after Loign" , loginReducer.data.token )
+         
         cookie.set("authToken" , loginReducer.data.token , {maxAge: 86400})  ;    
         navigate("/admin-panel/dashboard/modern")   
      }  
+
 
      if(loginReducer.usernotfound){
 

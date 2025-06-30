@@ -1,4 +1,3 @@
-
 import { Outlet } from "react-router-dom";
 import Cookies from "universal-cookie"   ;
 import { useAsync } from "react-async";
@@ -6,7 +5,7 @@ import axios from "axios"
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 
-axios.defaults.baseURL  = "http://localhost:3030"
+axios.defaults.baseURL  = "https://admin-dashboard-api-vpyv.onrender.com/user"
 
 
 const checkUser  = async({Token , setResponse })=>{
@@ -17,10 +16,10 @@ const checkUser  = async({Token , setResponse })=>{
                                   url  :  `/verify-token/`+Token
                                     })
 
-          //  console.log(response.data.data.data)
-           sessionStorage.setItem("userDetails" , JSON.stringify(response.data.data.data))    
+           console.log(   "this is response " ,  response.data)
+           sessionStorage.setItem("userDetails" , JSON.stringify(response.data.data))    
 
-           setResponse(response.data.data.data) 
+           setResponse(response.data.data) 
 
            return response.data.verified ;
 

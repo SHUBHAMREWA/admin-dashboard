@@ -1,5 +1,3 @@
-
-
 import { 
     FORGOT_REQUEST , 
     REQUEST_SUCCESS ,
@@ -11,8 +9,12 @@ import {
 
 
  import axios from "axios"  ;
+ import Cookies from "universal-cookie";
 
- axios.defaults.baseURL = "http://localhost:3030"
+ const cookie = new Cookies();
+
+
+ axios.defaults.baseURL = "https://admin-dashboard-api-vpyv.onrender.com/user"
 
 const forgotRequest = (email)=>{
 
@@ -27,8 +29,17 @@ const forgotRequest = (email)=>{
                              url    : "/forgot-password", 
                              data : {
                                 email : email
-                             } }
+                             } 
+                            } 
+                        
                                     )
+               cookie.set("forgotauth" , response.data.token , {
+                path : "/" ,
+                maxAge : 60 * 60 * 24 ,
+                secure : true ,
+                sameSite : "strict"
+               })
+
              
              setDispatch({
                                   type  : REQUEST_SUCCESS
@@ -57,11 +68,16 @@ const updateRequest = (formdata)=>{
                  type : PASSWORD_CHANGE_REQUEST
             })
 
+            const token = cookie.get("forgotauth") ;
+
             const response = await axios({
                   method  : "put"  ,
                   url     : "/forgot-password", 
-                  data : formdata
-            })
+                  data : formdata ,
+                  headers: {
+                     forgotauth : token  // agar auth chahiye ho to
+                   } 
+                })
            console.log("updated")
             setDispatch({
                   type : FORGOT_SUCCESS

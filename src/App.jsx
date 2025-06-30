@@ -63,25 +63,25 @@ const App = () => {
        useEffect(() => {
 
               const applyDarkmode = storage.getState().applyDarkMode;
-              applyDarkmode.darkmode ? setMode("dark") : setMode("light") ;
+              applyDarkmode.darkmode ? setMode("dark") : setMode("light");
 
-              const prefersDarkMode = window.matchMedia('(prefers-color-scheme: dark)').matches; 
+              const prefersDarkMode = window.matchMedia('(prefers-color-scheme: dark)').matches;
 
               console.log(prefersDarkMode)
-           if(prefersDarkMode){
-              console.log("state is changed")
-             storage.dispatch({
-              type : "dark"
-             })
-           }
-           else{
-                storage.dispatch({
-                     type : "light"
-                })
-           }
+              if (prefersDarkMode) {
+                     console.log("state is changed")
+                     storage.dispatch({
+                            type: "dark"
+                     })
+              }
+              else {
+                     storage.dispatch({
+                            type: "light"
+                     })
+              }
        }, [])
 
-        
+
 
 
 
@@ -113,9 +113,8 @@ const App = () => {
                                                         <Route path="/signup" element={<React.Suspense fallback={<LoadingAll />} >
                                                                <Signup />
                                                         </React.Suspense>} />
-                                                        <Route element={<React.Suspense fallback={<LoadingAll />} >
-                                                               <AuthGuard />
-                                                        </React.Suspense>}>
+                                                        <Route element={<React.Suspense fallback={<LoadingAll />} > <AuthGuard />  </React.Suspense>}>
+
                                                                <Route path="/admin-panel" element={<React.Suspense fallback={<LoadingAll />} >
                                                                       <Admin />
                                                                </React.Suspense>}>
@@ -138,9 +137,8 @@ const App = () => {
                                                                       <Route path="*" element={<React.Suspense fallback={<LoadingAll />} >
                                                                              <NotFound />
                                                                       </React.Suspense>} />
-
-
                                                                </Route>
+
                                                         </Route>
                                                         <Route path="/login" element={<React.Suspense fallback={<LoadingAll />} >
                                                                <Login />

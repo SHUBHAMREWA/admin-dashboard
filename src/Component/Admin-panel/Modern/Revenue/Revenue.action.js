@@ -1,4 +1,3 @@
-
 import { 
       REVENUE_REQUEST , 
     REVENUE_SUCCESS ,
@@ -8,7 +7,7 @@ import {
 import axios from "axios"  ;
 
 
-axios.defaults.baseURL = "http://localhost:3030"
+axios.defaults.baseURL = "https://admin-dashboard-api-vpyv.onrender.com/user"
 
 
 const revenueFunction = ()=>{

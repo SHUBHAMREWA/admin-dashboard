@@ -10,7 +10,7 @@ import {
 import axios from "axios";
 import Cookies from "universal-cookie";
 
-axios.defaults.baseURL = "http://localhost:3030";
+axios.defaults.baseURL = "https://admin-dashboard-api-vpyv.onrender.com/user";
 
 const loginFunction = (input) => {
   console.log(input);
@@ -25,7 +25,8 @@ const loginFunction = (input) => {
         method: "post",
         url: "/login",
         data: input,
-      });
+      } );
+
 
       setDispatch({
         type: LOGIN_SUCCESS,

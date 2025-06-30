@@ -5,7 +5,7 @@ import {  SIGNUP_ERROR ,
 import axios from "axios";
 
 
-axios.defaults.baseURL = "http://localhost:3030" 
+axios.defaults.baseURL = "https://admin-dashboard-api-vpyv.onrender.com/user" 
 
 
 const signupRequest = (formData)=>{
