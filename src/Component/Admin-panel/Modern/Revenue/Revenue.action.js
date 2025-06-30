@@ -23,7 +23,8 @@ const revenueFunction = ()=>{
 
               let response = await axios({
                               method : "get" ,
-                              url : "revenue-updates"
+                              url : "revenue-updates",
+                              withCredentials: true
                 })
 
                 // console.log(response.data)

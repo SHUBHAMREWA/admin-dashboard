@@ -21,7 +21,8 @@ const signupRequest = (formData)=>{
                        const response = await axios({
                                          method : "post" ,
                                          url  : "/signup" ,
-                                         data : formData
+                                         data : formData,
+                                         withCredentials: true
                                                      })
                     
                        setDispatch({ 

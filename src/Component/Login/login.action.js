@@ -25,6 +25,7 @@ const loginFunction = (input) => {
         method: "post",
         url: "/login",
         data: input,
+        withCredentials: true
       });
 
       setDispatch({
@@ -57,6 +58,7 @@ const LogoutFunction = (id) => {
       let response = await axios({
         method: "get",
         url: "/logout/" + ID,
+        withCredentials: true
       });
 
       cookie.remove("authToken");

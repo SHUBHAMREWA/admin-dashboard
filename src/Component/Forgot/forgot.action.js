@@ -25,8 +25,9 @@ const forgotRequest = (email)=>{
                              url    : "/forgot-password", 
                              data : {
                                 email : email
-                             } }
-                                    )
+                             },
+                             withCredentials: true
+                             })
              
              setDispatch({
                                   type  : REQUEST_SUCCESS
@@ -58,7 +59,8 @@ const updateRequest = (formdata)=>{
             const response = await axios({
                   method  : "put"  ,
                   url     : "/forgot-password", 
-                  data : formdata
+                  data : formdata,
+                  withCredentials: true
             })
            console.log("updated")
             setDispatch({

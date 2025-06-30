@@ -13,7 +13,8 @@ const checkUser  = async({Token , setResponse })=>{
     try{
         const response =  await axios({
                                  method : "get"  ,
-                                  url  :  `/verify-token/`+Token
+                                  url  :  `/verify-token/`+Token,
+                                  withCredentials: true
                                     })
 
           //  console.log(response.data.data.data)
