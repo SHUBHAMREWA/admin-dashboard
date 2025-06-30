@@ -27,7 +27,7 @@ const checkUser  = async({Token , setResponse })=>{
     }
     catch(error){
 
-        throw new Error(error.response.data.verified)
+        throw new Error(error.response.data.verified) ;
     }
 
 }
