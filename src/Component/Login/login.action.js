@@ -10,7 +10,7 @@ import {
 import axios from "axios";
 import Cookies from "universal-cookie";
 
-axios.defaults.baseURL = "https://admin-d-api-1.onrender.com/user";
+axios.defaults.baseURL = "https://admin-d-api-1.onrender.com/user/";
 
 const loginFunction = (input) => {
   console.log(input);

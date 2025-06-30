@@ -5,7 +5,7 @@ import axios from "axios"
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 
-axios.defaults.baseURL  = "https://admin-d-api-1.onrender.com"
+axios.defaults.baseURL  = "https://admin-d-api-1.onrender.com/user/"
 
 
 const checkUser  = async({Token , setResponse })=>{

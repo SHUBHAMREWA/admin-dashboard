@@ -10,7 +10,7 @@ import {
 
  import axios from "axios"  ;
 
- axios.defaults.baseURL = "https://admin-d-api-1.onrender.com"
+ axios.defaults.baseURL = "https://admin-d-api-1.onrender.com/user/"
 
 const forgotRequest = (email)=>{
 
