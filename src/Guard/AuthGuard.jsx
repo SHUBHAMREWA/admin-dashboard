@@ -32,7 +32,7 @@ const checkUser  = async({Token , setResponse })=>{
     }
     catch(error){
 
-        throw new Error(error.response.data.verified) ;
+        throw new Error(error) ;
     }
 
 }
@@ -45,6 +45,10 @@ const AuthGuard  = ()=>{
     const cookie   = new Cookies() ;
     const Token  =   cookie.get("authToken") ;
     const [response , setResponse] = useState(null)
+
+      if(!Token){
+          navigate("/login")
+    }
 
      const { data, error, isPending }  = useAsync({
                                                 promiseFn  : checkUser ,  
@@ -74,11 +78,11 @@ const AuthGuard  = ()=>{
             <Outlet/>
          )
     }
-    if(!Token){
-          navigate("/login")
-    }
+  
 
-
+   if(error){
+      navigate("/login")
+   }
 
 
      }

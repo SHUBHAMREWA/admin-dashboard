@@ -602,8 +602,20 @@ prefersDarkMode ? setCheck(true) : setCheck(false)
                 <MenuItem sx={{ m: 0, p: 0 }}>
                   <ListItemButton
                     onClick={() =>{
-                        cookie.remove("authToken")  ;
-                        navigate("/login")
+                        // Multiple cookie removal methods for better compatibility
+                        cookie.remove("authToken");
+                        cookie.remove("authToken", { path: "/" });
+                        cookie.remove("authToken", { domain: window.location.hostname });
+                        
+                        // Clear session storage
+                        sessionStorage.removeItem("userDetails");
+                        sessionStorage.clear();
+                        
+                        // Navigate to login
+                        navigate("/login");
+                        
+                        // Force page reload to ensure complete logout
+                        window.location.reload();
                     }
                     }
                   >
