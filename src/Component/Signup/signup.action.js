@@ -5,7 +5,11 @@ import {  SIGNUP_ERROR ,
 import axios from "axios";
 
 
-axios.defaults.baseURL = "https://admin-d-api-1.onrender.com/user/" 
+// For Development - use local backend
+// axios.defaults.baseURL = "http://localhost:3001/user/";
+
+// For Production - use deployed backend  
+axios.defaults.baseURL = "https://admin-dashboard-api-vpyv.onrender.com/user/";
 
 
 const signupRequest = (formData)=>{

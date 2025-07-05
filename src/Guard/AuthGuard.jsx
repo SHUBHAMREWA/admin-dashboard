@@ -5,7 +5,11 @@ import axios from "axios"
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 
-axios.defaults.baseURL  = "https://admin-d-api-1.onrender.com/user/"
+// For Development - use local backend
+// axios.defaults.baseURL = "http://localhost:3001/user/";
+
+// For Production - use deployed backend
+axios.defaults.baseURL = "https://admin-dashboard-api-vpyv.onrender.com/user/";
 
 
 const checkUser  = async({Token , setResponse })=>{
@@ -17,12 +21,12 @@ const checkUser  = async({Token , setResponse })=>{
                                   withCredentials: true
                                     })
 
-          //  console.log(response.data.data.data)
-           sessionStorage.setItem("userDetails" , JSON.stringify(response.data.data.data))    
+           console.log(response.data.data)
+           sessionStorage.setItem("userDetails" , JSON.stringify(response.data.data))    
 
-           setResponse(response.data.data.data) 
-
-           return response.data.verified ;
+           setResponse(response.data.data) 
+              console.log(response.data.success)
+          //  return response.data.success ;
 
 
     }
