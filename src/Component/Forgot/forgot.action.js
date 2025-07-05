@@ -66,10 +66,18 @@ const updateRequest = (formdata)=>{
                   data : formdata,
                   withCredentials: true
             })
-           console.log("updated")
+
+            console.log(response)
+
+            if(response.data.success){
+                 
             setDispatch({
                   type : FORGOT_SUCCESS
             })
+            }else{
+                throw new Error("Yeh meri custom error hai!");
+            }
+         
 
         }
         catch(error){

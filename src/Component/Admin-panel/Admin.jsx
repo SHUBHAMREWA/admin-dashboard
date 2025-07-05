@@ -30,11 +30,13 @@ import { styled } from "@mui/material/styles";
 import { useSelector, useDispatch } from "react-redux";
 import { LogoutFunction } from "../Login/login.action";
 import profileImg from "../../../public/profilephoto.png" ;
+import Cookies from "universal-cookie";
 
 const Admin = () => {
 
   const currentPath  =  useLocation() ;
-  const pathSplit    =  currentPath.pathname.split("/")
+  const pathSplit    =  currentPath.pathname.split("/") 
+  let cookie = new Cookies() ;
 
 
 useEffect(()=>{
@@ -599,8 +601,10 @@ prefersDarkMode ? setCheck(true) : setCheck(false)
 
                 <MenuItem sx={{ m: 0, p: 0 }}>
                   <ListItemButton
-                    onClick={() =>
-                      dispatch(LogoutFunction(usersDetails.userId))
+                    onClick={() =>{
+                        cookie.remove("authToken")  ;
+                        navigate("/login")
+                    }
                     }
                   >
                     <ListItemIcon>
