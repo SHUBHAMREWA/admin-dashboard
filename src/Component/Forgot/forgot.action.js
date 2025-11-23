@@ -32,6 +32,11 @@ const forgotRequest = (email)=>{
                              },
                              withCredentials: true
                              })
+
+            // Store the OTP token so we can send it with the reset-password request
+            if (response?.data?.token) {
+                sessionStorage.setItem("forgotToken", response.data.token);
+            }
              
              setDispatch({
                                   type  : REQUEST_SUCCESS
@@ -60,10 +65,13 @@ const updateRequest = (formdata)=>{
                  type : PASSWORD_CHANGE_REQUEST
             })
 
+            const token = sessionStorage.getItem("forgotToken");
+
             const response = await axios({
                   method  : "put"  ,
                   url     : "/forgot-password", 
                   data : formdata,
+                  headers: token ? { forgotauth: token } : {},
                   withCredentials: true
             })
 
