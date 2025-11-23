@@ -35,3 +35,13 @@ img{
        display: block;
        /* color : #dddddded; */
 }
+
+/* Ensure SweetAlert modal text is visible on dark and light backgrounds */
+.sweet-alert {
+  background-color: #ffffff !important;
+  color: #000000 !important;
+}
+
+.sweet-alert h2 {
+  color: #000000 !important;
+}
